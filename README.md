@@ -1,2 +1,2 @@
-# cell-clicker
-Cell Clicker game for Ludum Dare 59
+# Cell Clicker
+My entry for Ludum Dare 59
