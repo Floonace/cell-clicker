@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b6uy72jxyk3p7"]
+
+[ext_resource type="Script" uid="uid://bdy7rqqr6tikb" path="res://Scripts/game.gd" id="1_ebmjs"]
+
+[node name="Game" type="Node" unique_id=270131919]
+script = ExtResource("1_ebmjs")
+
+[node name="FoodTimer" type="Timer" parent="." unique_id=688602380]
+wait_time = 2.5
+autostart = true
+
+[node name="MitochondriaTimer" type="Timer" parent="." unique_id=564093416]
+autostart = true
+
+[node name="VirusTimer" type="Timer" parent="." unique_id=1806951104]
+wait_time = 15.0
+
+[node name="VirusStarterTimer" type="Timer" parent="VirusTimer" unique_id=1634021926]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[node name="CutTimer" type="Timer" parent="." unique_id=1402084980]
+wait_time = 40.0
+
+[node name="CutStarterTimer" type="Timer" parent="CutTimer" unique_id=1998215521]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
+[connection signal="timeout" from="MitochondriaTimer" to="." method="_on_mitochondria_timer_timeout"]
+[connection signal="timeout" from="VirusTimer" to="." method="_on_virus_timer_timeout"]
+[connection signal="timeout" from="VirusTimer/VirusStarterTimer" to="." method="_on_virus_starter_timer_timeout"]
+[connection signal="timeout" from="CutTimer" to="." method="_on_cut_timer_timeout"]
+[connection signal="timeout" from="CutTimer/CutStarterTimer" to="." method="_on_cut_starter_timer_timeout"]

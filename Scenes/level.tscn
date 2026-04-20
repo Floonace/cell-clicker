@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ebjfh7v6thnq"]
+
+[ext_resource type="Script" uid="uid://byde07rhc0afm" path="res://Scripts/level.gd" id="1_wqkje"]
+[ext_resource type="PackedScene" uid="uid://c5bilm5e85puk" path="res://Scenes/Cell/cell.tscn" id="3_6phgx"]
+[ext_resource type="Texture2D" uid="uid://cw6sxq85hvdgf" path="res://Graphics/Real/bg_big.png" id="3_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://b6uy72jxyk3p7" path="res://Scenes/game.tscn" id="4_81xng"]
+[ext_resource type="PackedScene" uid="uid://c3lohs4m28hj4" path="res://Scenes/Camera/game_camera.tscn" id="5_bvt00"]
+[ext_resource type="PackedScene" uid="uid://bcfqteaqjrd24" path="res://Scenes/UI/shop.tscn" id="6_0f350"]
+[ext_resource type="Shader" uid="uid://lwwks45n8vsi" path="res://Shaders/bg.gdshader" id="6_754fn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvt00"]
+shader = ExtResource("6_754fn")
+shader_parameter/speed = 0.04
+
+[node name="Level" type="Node2D" unique_id=2021679167 groups=["Level"]]
+script = ExtResource("1_wqkje")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1773287575]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_bvt00")
+texture = ExtResource("3_8c0lf")
+region_enabled = true
+region_rect = Rect2(0, 0, 30000, 40000)
+
+[node name="GameCamera" parent="." unique_id=1880148249 instance=ExtResource("5_bvt00")]
+limit_left = -8000
+limit_top = -15000
+limit_right = 8000
+limit_bottom = 15000
+limit_smoothed = true
+
+[node name="Shop" parent="." unique_id=1368557091 instance=ExtResource("6_0f350")]
+
+[node name="Cell" parent="." unique_id=1831736782 instance=ExtResource("3_6phgx")]
+id = 100
+
+[node name="Game" parent="." unique_id=270131919 instance=ExtResource("4_81xng")]

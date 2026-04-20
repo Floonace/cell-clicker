@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://qi8a8rl666px"]
+
+[ext_resource type="Script" uid="uid://bp0fsaug6hmmw" path="res://Scripts/Cell/cut.gd" id="1_pii8t"]
+[ext_resource type="Texture2D" uid="uid://hh1utuybi754" path="res://Graphics/Real/Cell/cut.png" id="2_pii8t"]
+[ext_resource type="AudioStream" uid="uid://bqqho1rv5r666" path="res://cut.ogg" id="3_htikj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htikj"]
+radius = 123.14811
+height = 326.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pii8t"]
+radius = 12.38938
+height = 36.133324
+
+[sub_resource type="Animation" id="Animation_pii8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_htikj"]
+resource_name = "born"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1e-05, 5), Vector2(5, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_3kjw0"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(-0.5, -0.5),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(1e-05, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_jymf6"]
+resource_name = "idle"
+length = 1.2666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.43333334, 0.6, 0.7604972, 1.0938306, 1.2333333),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [0.0, 0.17453292, 0.17453292, 0.0, -0.17453292519943295, -0.17453292519943295, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5, -0.5, -0.5),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(5.3, 5), Vector2(5.2156253, 5), Vector2(5.1312504, 5), Vector2(5, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jymf6"]
+_data = {
+&"RESET": SubResource("Animation_pii8t"),
+&"born": SubResource("Animation_htikj"),
+&"death": SubResource("Animation_3kjw0"),
+&"idle": SubResource("Animation_jymf6")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3kjw0"]
+random_pitch = 1.3468446
+streams_count = 1
+stream_0/stream = ExtResource("3_htikj")
+
+[node name="Cut" type="StaticBody2D" unique_id=708922511 groups=["Cuts"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_pii8t")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=146074701]
+z_index = 1
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_pii8t")
+
+[node name="Timer" type="Timer" parent="." unique_id=1746067544]
+wait_time = 25.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=878755886]
+scale = Vector2(0.79999995, 1)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=452331918]
+scale = Vector2(5.5375767, 1.608871)
+shape = SubResource("CapsuleShape2D_htikj")
+debug_color = Color(0.45357054, 0.016633218, 0.3996602, 0.41960785)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=727947398]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D2" unique_id=1330796226]
+rotation = -1.5707964
+scale = Vector2(9.04, 15.000004)
+shape = SubResource("CapsuleShape2D_pii8t")
+debug_color = Color(0.91200656, 0.19287547, 0.56164616, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=386299279]
+libraries/ = SubResource("AnimationLibrary_jymf6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=869804822]
+stream = SubResource("AudioStreamRandomizer_3kjw0")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

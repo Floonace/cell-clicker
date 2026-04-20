@@ -1,0 +1,1190 @@
+[gd_scene format=4 uid="uid://bcfqteaqjrd24"]
+
+[ext_resource type="Script" uid="uid://buqoto8wqnvjb" path="res://Scripts/UI/shop.gd" id="1_3jh66"]
+[ext_resource type="Texture2D" uid="uid://cvs1vjqg5qa70" path="res://Graphics/Real/sun.png" id="2_4e8w0"]
+[ext_resource type="Theme" uid="uid://d28xxlhdgg10j" path="res://new_theme.tres" id="2_dkr68"]
+[ext_resource type="Texture2D" uid="uid://blvwg8g401g8u" path="res://Graphics/Components/O.png" id="3_6qnyu"]
+[ext_resource type="Texture2D" uid="uid://d32ntvpmff7qa" path="res://Graphics/Formulas/Insulin.png" id="4_gm4r4"]
+[ext_resource type="FontFile" uid="uid://df2w23dnukafg" path="res://BoldPixels.ttf" id="4_kig42"]
+[ext_resource type="Script" uid="uid://8yih15kgntd6" path="res://Scripts/Components/component.gd" id="4_l5jkk"]
+[ext_resource type="Texture2D" uid="uid://du20gcctpeeo8" path="res://Graphics/Components/NH.png" id="5_w2r4i"]
+[ext_resource type="Script" uid="uid://dkuay0abmbi8j" path="res://Scripts/Components/slot.gd" id="6_4vyng"]
+[ext_resource type="Texture2D" uid="uid://dhxil7viwbm4w" path="res://Graphics/Components/CR3.png" id="6_5oyw6"]
+[ext_resource type="Texture2D" uid="uid://cookncu3ydif4" path="res://Graphics/Components/N.png" id="7_57cgt"]
+[ext_resource type="Texture2D" uid="uid://bq4uhb5ha110m" path="res://Graphics/Components/OH.png" id="8_vnhp2"]
+[ext_resource type="Texture2D" uid="uid://clivoby6tcucr" path="res://Graphics/Components/F.png" id="9_yse77"]
+[ext_resource type="Texture2D" uid="uid://bjel22afrscg6" path="res://Graphics/Components/HN.png" id="10_4e8w0"]
+[ext_resource type="Texture2D" uid="uid://db2grh52uhxxa" path="res://Graphics/Components/CH3.png" id="11_dkr68"]
+[ext_resource type="Texture2D" uid="uid://dtmj5o362v5md" path="res://Graphics/Components/S.png" id="12_kig42"]
+[ext_resource type="Texture2D" uid="uid://dpmsrh242owwf" path="res://Graphics/Components/NH2.png" id="13_k71wr"]
+[ext_resource type="Texture2D" uid="uid://cm6he5mqmtt5h" path="res://Graphics/Components/CL.png" id="14_237kg"]
+[ext_resource type="Texture2D" uid="uid://cfjaovnhd6fd3" path="res://Graphics/Components/F3C.png" id="15_uexpf"]
+[ext_resource type="Texture2D" uid="uid://dyiokec44hed2" path="res://Graphics/Formulas/VEGF.png" id="18_5oyw6"]
+[ext_resource type="Texture2D" uid="uid://48v1t7yxd613" path="res://Graphics/Formulas/Glucagon.png" id="19_57cgt"]
+[ext_resource type="Texture2D" uid="uid://bous13focy4jm" path="res://Graphics/Formulas/Interferon.png" id="20_vnhp2"]
+[ext_resource type="Texture2D" uid="uid://duurledjjufjk" path="res://Graphics/Formulas/Histamine.png" id="21_yse77"]
+[ext_resource type="Texture2D" uid="uid://dq4o37nhyx5e2" path="res://Graphics/Formulas/TNF-alpha.png" id="22_4e8w0"]
+[ext_resource type="Texture2D" uid="uid://b5hds3k3cm0eu" path="res://Graphics/Real/dither.png" id="25_k71wr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4e8w0"]
+bg_color = Color(0.4509804, 0.17254902, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkr68"]
+bg_color = Color(0.2358464, 0.07415383, 0.120020606, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k71wr"]
+bg_color = Color(0.4509804, 0.17254902, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kig42"]
+bg_color = Color(0.4509804, 0.17254902, 0.2509804, 1)
+
+[sub_resource type="Animation" id="Animation_k71wr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/BG/Sun:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(129.904, 129.90399)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/BG/Sun:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_237kg"]
+resource_name = "click"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/BG/Sun:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(129.904, 129.90399)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/BG/Sun:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01973703, 0.038567636),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uexpf"]
+_data = {
+&"RESET": SubResource("Animation_k71wr"),
+&"click": SubResource("Animation_237kg")
+}
+
+[sub_resource type="OggPacketSequence" id="OggPacketSequence_fvnok"]
+packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAACgLsAAAAAAAAAcQIAAAAAALgB")], [PackedByteArray("A3ZvcmJpczQAAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDIwMDcwNCAoUmVkdWNpbmcgRW52aXJvbm1lbnQpAQAAAB8AAABlbmNvZGVyPUxhdmM2MC4yMS4xMDAgbGlidm9yYmlzAQ=="), PackedByteArray("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")], [PackedByteArray("jDntDCz4YNPjlI3EHI1h9GMcX/50Zd01i1IKE8BZY9Z316/s3H1qMsKlq6DgLNtxHfYlqwsIbm7v7jQjED8PcwA="), PackedByteArray("uoVsffpZQaQXbnH0TI2xC3lcFj4rf/QYKtQUP2gefnnvx33uy/1/D9cfHz1nDPti91jnt2P3wzeGV1XTKMVsLgAAoXqTeMTI6dm5HT/v7mP28u9bgvi4eXY0HnmP0ZGzLiXSqFfcZ/Mr88VtA5+68y7zuCb5HOjkLwRJBLEtTP7B9hEA8OuEHc8PBU7Ze/dUQVdV983lm2J/Ld7CEcEdMDN7U63Lxel3mIYeprapi8lS99Cwz5mxY2YBfb1sJDPD3MRczs8EwH3dZHIOec8wa4qXS0/GcWNo6f7CTDmzNs1hPM/lcTbQQeCfgW4YG5u+tXAClrMwYFTYuUmviEUYocwMGAIWAGRhLUBlbKA8Hn0GxD9SC5JhDGomkgYKaCiKQaCVot8kJ0sByjGVI0hhF1EbW8gIKbLiNUERlgE+qQA="), PackedByteArray("doi8zvvBG1GCE9+6hOOuKXYht9eJD/1A6m6zCblm/AYAONR5H5+RTnhtef3QpTeNsKqkzBgAAPbeK855+/J2fP1NDvsdXTf3IZL/biRh+E7P9k66turisib86zSfsP0ULx3w14t8+rTTK6seLL6btnI6Ks+zf/3/WV4OvzmdI14iOZRyOEbx6CONLqJmqc0s0Flk6e1dUNx7IN3XnePjpn7t7OaJ5xraNPP2p55km2hfPrvne+t7wQyOgsrV/zfOPJPxV3Ay//3yvE//3pV3Jjb1+iEi9YUaUd4n5ifz51hFzpMUO8mqgp3Ri5OE+bqH2XQA892Ve2hopjF2HcBBbQ4ApTUBKICBUz8ugSaLdampdCnKy6EfuxvT+pRnoSiBw2QGmG4AWLCqIssCoPvWFJuPvVGK3Vy78udPNksBWAkFDEhZiqKVXpYCGQsAMEBCKfEW2EuMTGvF4O6fAw=="), PackedByteArray("PFa3PYhDLLg7zWYtnv0fFSZpTbV8AMqMAvD2CqzohOxr5vsryd4XzzzJ8hpD159iPuhbPTn5sPc1hapw5ko4H+BZAg=="), PackedByteArray("lG6fThdxNweo9dbjjNGHpPzjSBJTC/vx7z79eGTHSmEA5nN+/sefs/+losXv3mKd+2ayc/lJUfmhp1GF49D4xIdnCQ=="), PackedByteArray("LGr3zca8p0K/046TTdFsf6aI7XP6AC1KB+BfGHtDzX+lHalUm3wRc7q+rP3c6LtPTFxP+4849uf2uM6P+vcmHZlVKRW5XOR6aYIqqnS5iHg1LAA="), PackedByteArray("1JY/VoBgwefqearDqVvG/hOIq+6v/66m2Ya0RNIBuOtqO7QyH/XaTSPPTbtH317njdfzc/0r4teWbFY0cf/s8Nb8S7gkOi47vPwFVp71rgo="), PackedByteArray("tIq/DkJUyHsSPmGP0y5OGp6dCWYs0wuwbB2A17OCRJ9rDWpwmlMuFTw7/8fwsTp+5HZ98R8c3u8tDz8v/7p/vo6dw8yi/WGZrJpo+v15G1PK9t83GAA="), PackedByteArray("ZHbXzSKvo6FP1OOUm573jrwTkNxVfwBKZxSA/QbMqV1xv846kZEz3fvTNft+2knp+dxZpzP7b7fz7rfpybdmSPB1GTkVBQ=="), PackedByteArray("VH73DTDph0aJsx2nzXuG51Qchg9A6UwIgN/fC6gs2usm1Wts1Q7Za54ceWUG/1vfnsm94+9liEdVWXoVXY7Ry4AA"), PackedByteArray("ZHKXYXJuVrI9Zs4Tc5Xt8z01WNcfgFIKA5BfASJP+7vYpURLz0/VOab7XW/Mvox9qrT5nqU3AfXhgSVJEd7DOPED"), PackedByteArray("JGJbB+dRlzrccVLGwK7J/vDmH6DZkEHgG8YGf5fRUzulgqf5JLWXL6sPF32jNXLZRPJLof75/c3l2qPckgIJ7t9nFnXYYCFUlqLqjAA="), PackedByteArray("NF6tUftixQ8dHtW2ySkkbRy6GZE0Yb4AXY/nr7LmPC4CfnBscB7yK/1Nni4He5VCl4WlV9irB8uG5dK4fLDzncOPf/dp1RRVGh8ujq/9Wn1+1/0WhyUXAUB9FQCA7cjLz08="), PackedByteArray("xHZxMGCI1oHkZPQ9pbHDdoqS28z+XtZ/fGaYVShIiZd04GUjcx1FsP5PLeen3Itocvl1+fnjR3zU5vk9n+/v65e773d74de8XAhDBRV+IncrPDL6F6AA"), PackedByteArray("tIZZtquY9qYr+ME8Jw92yL+e/Ov/AD0UdUlBOngx9or7oRINeX/Se5BfX/XEJVHM5fVx3d44p/9Rx2ejl7emJdRw/w+Htg9OaNu9O41IdSMgC2IBlMfPj8/2XAUA"), PackedByteArray("lII3pEcn6mQ2HVyx4T9zGpOI/XesuH77/q7i/OUe0qrQAJpr3Oa2x3ZSS3nuz86Mu8//vWM297vP7/6RH09NaD/vEkZCl6pHSiGqxLMImBUAUayHcwEA"), PackedByteArray("2jk9jLEAqGr6pN/r7fUQU2hNSRhSgPa5/J3H3T4obJtiwMYfAECc5eMd46L9xftxN/o4vtdeZ7d3y4uXu1uSjuG7LecI1ZLGHQAAcN6cuFrvzmCUrxa7Xe+qOcQQ6zb59us+f44pjMvlJl4wyJwabPf/ZgdPmXNZZP5dZM98ph9udlZXX5XU5FR+KffU/fR57HyxfQGgMm+dmTlZHIijlSyaHqhN5I+P78vWm7ggMu8EoKen6dl/1P9+brE7LaXshzsrS6f7f4Ye+m2Ry89m6Nk9AM/JZL6O9FLHTNPTAHcXwDRvN83gj753Ai9qC7VpAO6ZCw1f/12m0IV53P3UnK8tMm/iGZsGAABovm+YcF2+Hl9f/+6H3yMLj2XmZpraAKzNYhaYlQEAut10g9cE8Mqlu5XUucQt6B4A3isAB6IICwMAzGIgV7AAwAJAQteAxQAAAG8AEEz4lBACIxu8sGpFIFaCXVsEiwBaFwAAAAA="), PackedByteArray("Xmt9TabJ78BfR05Pl6nWHreQAs3KFpn6T823qxlTrq94q7/vcl55l9fVofN5XTjxPpKMdblmufowVUkKQWDEAADA2m7R+Pq5Pd/Nl/PD9eobvg6ufm3qc0JyT/pOeiu312Ts6xqaZ4vvn5NbmR79vPm65w+bvhQXrwmfz3e3E6AGkk7Ed28JvqAA4EXVR2GAntFNfpNcG3iGBja6eevwGY+orm4AAKBnflKZ3r6crSzsFqfthmp4fHoPQGqR9bREmenX3zJA46wsdvlrthl6miHjAMCBMpJD5v6V39OB7Fx6C33TbHpz8w/nlznucpYgOM+sPAdXUgDADNCXgMiiUjhFWDBgEQqMCxVN9hLlpWSGwlaCwJa2EV3wqMNFrMWiFyR7bBkMwAKgPbwhSYHQowWANfxYA2nEIBkMsGABpgAA"), PackedByteArray("fmv97jF+DH+9u+5QDV3tsAqZ1HHYieQfXf8UJVN27fFtxsP9vh/F8613fY09Hqtuii6qdJOLluvolo1WpCVZghAAAHnTfPBCBb36IHevtcNS/3y6Un8u76Pw8NN8ffupXiz26huHAdz8i+Gb444c0m1yvppqaPY5FslrHKP0cJnkp3zIg2owVzs739wDo5d12cdLc9MXmg2A1MrpeyfgEucAFqGX1z/9LRYnLdhU/TSkdmZDD4CZr2n9frk0PeQFMNMuGJIf+gIAmgagoRmoi4hONAkc+OKFUj97+r58X/p7oONtbmCEnem5jAMAhpfO/RsA+LwCbZmAQWgVtAFgNB0uRgMANIAGJQCiVwACLKbdno72qgtq0wD0qjYAwB6MwD2PA4AIAAjbCEoAdAgUUHDi5P3u5cgCALB+wjYMAAA="), PackedByteArray("Hkv91ZZ2TcJoCfRkIYfa8Ao5soVXyp/uKZhgN/GD9Pj+EF//8drsvffad7etP/6jb1p72SfruotMvxzLSLLQVVVJwuBCEAAA3numMiG0w3wzOub5NZyl8cTTgje7v+34Ytp0HOLs1A278+TzOfvL5NymXm3sCXOM2AYyFfVy//e9lxeTDUPW1E0DEEv9fNn24f7vbhroBvzwY4+/LpqYq6v34a/iBMHvbRuyUb+43s6aubLa7gEAmir/v/+w2S7vbmAzTIPPReUARTYjgLzy29y7S9MzOe2sLHruUmnwut588fVd9wDzU22AZS3AjyJFvlnFxfQ4zByAE1mgBOCDrXDz5rMXzEIBre5RzbLKGAGMNw0AJh7BG6Td24MBIJR7LMo7EEYCfMQpLwAAAFYAAM7AAAA="), PackedByteArray("fnv9X5YDgptY8VWYmjELOfWVb+BX1lvwdsyojdx8eFRTLBwxpdfFfejT0Nw3fFs1NZWhAAAAJe+d/Azzsb5y+bZXL79P2Wphk96DA3Hb7XffP397GjddfzQ7zO+1bgF+grrx/5+nsyLHE2dU98Dm/zzrjdlV06QzmnyBufgsJAxxzPqClgCqKKjKLJh5s34iGKZf7t/OOBIg0MCX2uwZ8UxkgOpHmJNKvPJQLa67trkEexOEmu97dsRVdDVMy10enveP13Q2ANOT/pAApzCb6WnQv2eiMwygDUB/E6AZoGCq/z8AADAAXtzZAMCTBMADGSnJJQpAg2NYJ42F1wLDguOG9myhCFARSVFAYZqx5ozslcXvFoCFulHAsQ0AgL1aaQCAsVgAAA=="), PackedByteArray("njr9X5ed5NycBU9ca8Us5LyvPCMfj4YDtcM36+HnX351dra9dN5oHu7bK3m+7tYel7OvjADqxwiftNYII1xCAgAAypHQ0/ikVcgvDd5/vz72L3/Xr0wpyYf35Vbzx8XtP+DZXgVffNr7gd0NxPw58ZX8bJW/QDGZRJk/FEmxozWzoqaYpsk9esvC/hrozOnprZnjv/aLSyhBfacrXQtbfjavEOzRHxuZMnDOUmzI6qLO/qneVUURvK+dOdsiU3X/5z2u3Xg++2YPmJftzwBIan+J5i0A4vgmB4BYLL0AVX8nTdENn1NVUFmQyTNZTQJVAMxFASYHAKBaLBAUAMMyFKu6PGQBkLBCJpy4qAIAagFgAYyxMAQrKWCligKAQXQMgwEAkAitDavAgAQAnR7oTF0FALAKAA=="), PackedByteArray("Prr8X+ZdMEf9OIviOETCtWEWcj1XnlF8PBJdk1qpdnjLT+vr856u70/k+V+fL5YV+ArXmzU0IkIyLV0AAAqP8vJj/DI0vK2eXNVfPS4HZi/6Y5MP7Pz47ej94/1t54Cz2+mJ32O0mRd1Xm+udx8WNa4vnvpj3jdMFaUm4j79LD6HmN6JjO3zvlSQh4buIYN67rnu6Pxc7+ee63/gZv3d4e7ubIn+uOXkURsygVL9SwBQc3XNIYHnHdjwzBlTcfo4SnY2eWxemzXL5yfYrB9S5/q96Kg5vB71dwbI+slnAGY2WWbf5IBnmmo1JzcJO3++ObPfGe/KqkJTOM5lCtq3lU84l5dz2EUx2cU4QTmQNucE3klcic3YBTjgMnYlJuUu8MRZyVOjgbazlADEFMm0AQBFoXDwtGV0B7IApAcAAELE8GQXQD86TQDACwDgJgA="), PackedByteArray("/ir9X8aF7PHHcsNRQO2wC3nsCx/2A8FGovZ489l2/XA8K4cUquo9P10FGD7paMPMwpRmSQIAgFDYe/+wbN54X3/1dB+dOL7ZlFPLxNPj2f2m8eQ/DjfibFZi/2dL96BTTzlkb8e1K9bkf+e9e45+gz+HfSMzQ95nj4s6d+qpDx739jwccE9l9/4d23LzCbFn84U8k50J8czib13X5OUXdad7apgNPIf6AYquVwMmf13TYF7DMDPQ/a4tSnmTyj0DAEVtBq7xJKe5XeLqy32LJ6PiA1WpH+4uyJwp1Ymnzim6qqGMWG6nUVdN/zc+3Hk8LmEayqCWwqwPXJbCRInABUxnHwghWUUCVTbNipiigIqACuTcQtqNCwXABnDAMJBHUaCwsdR0rFQIsCIjAVgpZAHIIoA14gM=")], [PackedByteArray("Xtr8xx8XsiNe5iqY4vIsrRWzkNt14jX2I12igWLt8PZ/dyCKmId95nSlvTOptTPMQoNmSjwNAABKPs7hs5//ydeBPBk7OV2bf1t97+97Mq9qv4sX144/Nl8YLj8PbyWblVuSaenwaLFy6i+uD1vcgfu+e7L27Lyvw1PlrENTPQ/LITOfzyRvvU2wqaX57s0xpyA2mKr0nlxnmJ58McVj77Q3wDz3o3pgGpJDSc1w3797oJltW5/8DpUnm9zd6+dENJlX/iirkifrfeZtdKpLJzmbTFF856TM1dRJouyBp69zmO+JXxAJFzLYg+YMIUQAB4BKeBFgAB0mrY9he49BQDcdEkIll9taH2urOssji8IxXeAETMXYuTMW3ltjhkGJvb3AQgICiFZRYA47N/sS729JLiArFgAAKGsIAQCoZBKLHxDIBAC8AAGHFwAAAAA="), PackedByteArray("/oj8+TrJjPh5drIjO1Bril3I41j53XyACTXj2/bLzx9XO6zO+3tHuF3qAtg6Gm2ERoQqRdGCAADo/U3ex3Vj0rSHcX2lexxQfxSWiauxYS6+fh7jTn6XjN/2vn5P7nayQgss6/Ud/l7iEH54sXyHOaB6s039CnP/yiC3mKa3af4nAmrrHU+pXPWtTH8qizab5IWPr3u+GYDp0U3DDji5ezgFTw+k729+auYZGKYhq3r31HD5kP/8HrDjJtvu5J2qOU8NmAPshPOPanqaT14FHP2heGs/7aQAAL895tQF8DbA/u+FLOCiIIFSkxwWLUWLjY4ziIM3y5hiNWC1q9fEtUnH01tDDlBA9QpzJ1BurAsAEcnGgLbjwPF54XT4EzHWfC3fSM+BSiGTOs22dqwGBZYAQGu5u3TnAAJbgFhjE1YAMQ=="), PackedByteArray("noj8/DgjA7JXHPEhWWqMWchjnXhDfIwLB6Wa4jcAAHQ6Fl3xHovgk9k2b6uqEUzRLgAA8NXtAIyam/3BeTEere3+3k9sPv7r7hKu7l9z9id7bdrYxOJ/Tt723ZWzN20L3atVqz3g+qglpuvXL6QfV5YeSlb1cziUSnTBudLZ5BZbSMfs57/JzvkpsnJaNnLz8Yj71AskgmAGaf6DmG32/agq8b3lcGn4RAk9DdMMqqTJnF1ogfuqq+juynl+PrnJ6quoot8NM8yIrH+rlHdNBQXFNP/MPb+YZBrS7RGtDSwmqr0+lvQnr/cmm5vssSebTwKcDQl4Fz3UQ4qCihOggEpqYgAAemZwYiCQxqBdYFqkbi5ErzJymbIBW7cNF8bv4CiszzGBxgKGWGMSRS6AacfTQYQEsYUlA/ibBmBwJkJeimkFsa18h4QF1oIxjQUBAq9WABwA"), PackedByteArray("3pn8773OHSilRU2ndPf9pGtNMQs5nzu3sR8NBn4145u9H85e/PrXD32txXmq68hxb5Nmo+bNIjRIpgsAAHn3eSczurefbktHP1xM9b3vyZ979n7Zu19ck3fid4+9Tt7stIfPZ8Skw+tbl8rdZW/y5VoPJ356udX7h/7evWtgaMyfPAXLd/9c9gywm8NF3RdMLrytGYb5mZS2XFrlSd2yVKeIH10xAACIBvqqM/nD/FCxxz11P2hmYKwBQ8NAF/c3/cExLtFVWZCTFzXnk/nSIgHgk/OnQKQg9x5++cP8FZqBBJiZod8+1D1kgTVkb8h3jzQCjBkPrKoHGiDTDt0SGG2NjLJjBG5ogAFAVRApLdWDkx0VACAKGLBJbKAaXe7oki2PjcsBACysoIEQgN4LCDRRi1zmbNOKyhGJARAWWCurAcmsAAAAAA=="), PackedByteArray("vun83++DLDc3s8Mtxiq1whZyX1de/APJRLl2+ObDw8dHf9/PCzstFbph70gsWRvWhhlNiEkXAIADv1/8e3U/g/P3jSbmtaCT741O9RNtO4++WP35qd98kjkeV7y3U93y0k83m8uJQ/MmLmI+zQrTTz9Xb9YEkpGC2PnOA/OZeIemknvG9ZPXydonKXj8vOdpzXXUOXmqhwNQ3h93ubeG3tHG0zxFVe35O3sm932STE8DWAiL19upwImA++n6sS4ex6Sgczrx7JeT927ywxXcVxzV5D0tEDeD7ls83by9cXqA4L/ngtkwW4EzFz/3wIYmLI2MsBgBK4bQMwK8GkOCRoC8NmTJJGpIAGZJE+EBF8iJuLVuTyduOcMWiZs2VYvxtAbCUWzuATC5ugAMwL0jAYBXYcABoEWMG4AflgAAsCIwCgA="), PackedByteArray("Xpn852M5jBLyfGCIoi41Yxfy2O588IKhGVKqDV989HFld/dwl4eHPDCfQYf3bTSsUkPSLAsAQP936N4Hb/d3W7zwNOcPJC7a/e31fJj/96f+4PBbi2U8/h/vDz50/j/9v8++edP9Q3f/ZCxl3HjxUcqdeZ3oS0PvXjXxXCTVOTPz0ooR2OT7AyUzq10H8JL9vt0F3Rfdu2DgEC1//EnPzDTMHioZ3swi6T0fkrNMbj3LthUMM8w1UG/VAcoljvbyzywo3jX/5xfFfSeQcGp5kiavyurcqqtcP7nn3Md/25uOk3Vx1etHwDl775k+b4F0RK1nH0ZpNYC1ngEUGm6xTjE5M+rYromkbFigqAIwEAMAgEqSgXnlSMGqq9LAIPTN6NWFTMkMAmdZm3uMygMosILT3wtQDACAOGIKnFSHKAmbWcKwIrAADCICAAAA"), PackedByteArray("ntnc/LXFSl4abCHUTLKQ+77wYj/AgJrxGwDgPBSUDlBE2/qOqkVU2aVoFwAAvHrbCVD3yPL9YnX5n1fcaVyh2/adbv6cDd6l47zIZ25H+7zasMRfXw319aoxdPStP/j5B4fyX3x7L8QZy429Pzd0vptpzpOU/k8/G4rKrPn53pD7TupKMUBVsrkyEviok0F8e9emXTF1ldSunKybvO+CniLPyUuZJ7Xreftnl3JIgJ8zmYM3NzQRk6dxk7Onfe1dMffhZtxVZO6q5zldnDJoICHL2ZopJwDs+bLBsLv41vQu4uOhVKyCzmVYg+tZw6WFwJquBUdsYaJqoOge0ohYkEXaXj6oV4hyoMrkRcngkeFuGxgtANAAER4AADd6f2AwGAC2m+65RWEKA8QCCZLPFu+dAMBN3bHGBtmQwCpsAFjISysgAA=="), PackedByteArray("Pon8/bqSXH7u0dE10fTcNcYr5Dyvb2MhI6FADZHr51NnKJy7AoytbX1Dow1mrhgAAOOL/4fkYIn9nZS6RfLvdfbrbrPvfK952zy7FnOu8sNPPkqKx989830tTuO29/2LU46Put//vI9OcMzwCbweD8/Pnq0cN7s2nYl2MciSLvkYPgfhsn9/Uha7EHI4zZ1TefNyMrMNeZOZ1G4SKpMusqY76HlJnbHqJEBFM+bAyxTvu46gnsPsAvqGJpvu6wA1RJlRlfrAzqujmYskDyQg2ON/dSeQKccU10UCVaZ2/+T8EQUAQEFMAhLAgQGLc3Gp1fNbQ8P3sQvGTiuGBrIH+5/OWz+lCabISZZmPItJgBYlkqZNZtPEgLuLHrQYOFAGDQUwQbY9AMXbxiJZLlZ6ZQCXsijgN0AEsaUAcBwWkZGxZKswsWBcAA=="), PackedByteArray("fqn877Vj3Pz2XnHECKgRXiHneeG25ifAEEyN8GV/WP/34/vV10W/7OwxRq1ew4lGlZlLAwBQu9Z59rruO7+vtfh9en1Y2uuPPBr1H58S/3D/YPl87fucFZvtZuXm7lQbdJp3/9AbaHNlO4W/FUFB1jxv8kd+rbG7O289dBZHYGvJfsZUdv/aUexw9v6WkMkiE9hH+4veTbYr82qPeU5ZXVUoG0MzVbv5uc73/H0ngQEfaJquqtE9VKem2UUVfh7m31TPnN01YM7bGrrzBXqzRW85mW+bYyL55cMYf+fOa97ml7l8ex8oCgBIFAx+MUBZ1yQGeABQz0ZdOJcZIK8CQQAFYhS4Y+HWAqDIoCRFAkCCOgDOEB2JYaEGgI0i3/HXCfkSyIUhAPDb4DkGkBykAQJjGwgbNIEIAAAA"), PackedByteArray("foj8+7yShHxoH07crqkToTXCK+TtXLmNeYDuCTXA2/tZPjzwn9Fm7xhta9IiqswkiwEAMHrIH5OJnzW+fvy0wefJKbP59d3dG5PTL+Ls3c2nW9i7b7/tMw6t2O29ZahqSQ8dHl+R65uvn+1arB4PR3FSeaaHNFlkHMVZ++xKel/uekbKw75UVWF6n6tI95TmfIrD26+Xz8u9b8fDMQDIuu7IDZWVNc//59fvz6nrvqg87xJf333Sy9tMT5OOLOhd6c6SYZCXIYe0phQnDuKrpr2szzTANPQ+u3LOLgaovKN1eZ8BywkN7+PjA86VozgLAIDRZAp4Hx+bwBSbmwBprYubyrYMBQBZCbqv2tzcBDIyAF7CxTDtsvDmwx1fqDiqBABIK5bJODJy5GQ+yvImo8m9A4CP2bp3m2x9A1kmF74ELnMT2MzZEFepAA==")]])
+granule_positions = PackedInt64Array(0, 0, 11456, 21457)
+sampling_rate = 48000.0
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_k71wr"]
+packet_sequence = SubResource("OggPacketSequence_fvnok")
+tags = {
+"encoder": "Lavc60.21.100 libvorbis"
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uexpf"]
+random_pitch = 1.4896774
+streams_count = 1
+stream_0/stream = SubResource("AudioStreamOggVorbis_k71wr")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ns75m"]
+random_pitch = 1.2617418
+streams_count = 1
+
+[node name="Shop" type="CanvasLayer" unique_id=1368557091]
+script = ExtResource("1_3jh66")
+
+[node name="UI" type="Control" parent="." unique_id=986305035]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="UI" unique_id=1939098534]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_dkr68")
+color = Color(0.18039216, 0.12156863, 0.101960786, 1)
+
+[node name="Sun" type="Button" parent="UI/BG" unique_id=391428117]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46
+anchor_top = 0.101
+anchor_right = 0.46
+anchor_bottom = 0.101
+offset_left = -68.880005
+offset_top = -64.72
+offset_right = 61.024002
+offset_bottom = 65.18399
+grow_horizontal = 2
+icon = ExtResource("2_4e8w0")
+flat = true
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/BG" unique_id=675830262]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52500004
+anchor_top = 0.63500005
+anchor_right = 0.52500004
+anchor_bottom = 0.63500005
+offset_left = -113.70006
+offset_top = -307.20004
+offset_right = 108.299934
+offset_bottom = 179.79996
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/scroll_hint_vertical_color = Color(0.4509804, 0.17254902, 0.2509804, 1)
+theme_override_colors/scroll_hint_horizontal_color = Color(0.4509804, 0.17254902, 0.2509804, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/BG/ScrollContainer" unique_id=398598851]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="SunbathingLv1" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=2053249091]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4e8w0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dkr68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k71wr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_kig42")
+text = "Sunbathing Lv1 (+2)
+(15 Energy)"
+
+[node name="SunbathingLv2" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=429967697]
+layout_mode = 2
+theme = ExtResource("2_dkr68")
+disabled = true
+text = "Sunbathing Lv2 (+5)
+(150 Energy)"
+
+[node name="SunbathingLv3" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=328730112]
+layout_mode = 2
+disabled = true
+text = "Sunbathing Lv3 (+20)
+(800 Energy)"
+
+[node name="SunbathingLv4" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=650718902]
+layout_mode = 2
+disabled = true
+text = "Sunbathing Lv4 (+75)
+(4000 Energy)"
+
+[node name="SunbathingLv5" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=934755563]
+layout_mode = 2
+disabled = true
+text = "Sunbathing Lv5 (+250)
+(15000 Energy)"
+
+[node name="Mitochondria" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=1085661607]
+layout_mode = 2
+text = "Mitochondria (0/10)
+(500 Energy)"
+
+[node name="VEGFformula" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=1238902685]
+layout_mode = 2
+text = "VEGF Formula
+(10000 Energy)"
+
+[node name="GlucagonFormula" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=734985424]
+layout_mode = 2
+text = "Glucagon Formula
+(10000 Energy)"
+
+[node name="InterferonFormula" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=271125315]
+layout_mode = 2
+text = "Interferon Formula
+(10000 Energy)"
+
+[node name="HistamineFormula" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=878911200]
+layout_mode = 2
+text = "Histamine Formula
+(10000 Energy)"
+
+[node name="TNF-alphaFormula" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=251497791]
+layout_mode = 2
+text = "TNF-alpha Formula
+(10000 Energy)"
+
+[node name="InsulinFormula" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=1395527662]
+layout_mode = 2
+text = "Insulin Formula
+(10000 Energy)"
+
+[node name="ComponentsLabel" type="Label" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=565451121]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Components"
+
+[node name="O" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=1950146641]
+layout_mode = 2
+text = "O
+(500 Energy)"
+
+[node name="NH" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=891891076]
+layout_mode = 2
+text = "NH
+(500 Energy)"
+
+[node name="CR3" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=1765640301]
+layout_mode = 2
+text = "CR3
+(500 Energy)"
+
+[node name="N" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=668017151]
+layout_mode = 2
+text = "N
+(500 Energy)"
+
+[node name="OH" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=551842116]
+layout_mode = 2
+text = "OH
+(500 Energy)"
+
+[node name="F" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=915364722]
+layout_mode = 2
+text = "F
+(500 Energy)"
+
+[node name="HN" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=40081596]
+layout_mode = 2
+text = "HN
+(500 Energy)"
+
+[node name="CH3" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=102182863]
+layout_mode = 2
+text = "CH3
+(500 Energy)"
+
+[node name="S" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=462575291]
+layout_mode = 2
+text = "S
+(500 Energy)"
+
+[node name="NH2" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=1146752475]
+layout_mode = 2
+text = "NH2
+(500 Energy)"
+
+[node name="CL" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=231574344]
+layout_mode = 2
+text = "CL
+(500 Energy)"
+
+[node name="F3C" type="Button" parent="UI/BG/ScrollContainer/VBoxContainer" unique_id=2065625197]
+layout_mode = 2
+text = "F3C
+(500 Energy)"
+
+[node name="Button" type="Button" parent="UI/BG" unique_id=140327203]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.5
+offset_top = -41.0
+offset_right = 52.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Craft Signals"
+
+[node name="Label" type="Label" parent="UI" unique_id=241057957]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 20.0
+offset_right = 29.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_kig42")
+theme_override_font_sizes/font_size = 26
+text = "Energy:"
+
+[node name="CraftScreen" type="ColorRect" parent="UI" unique_id=1109545900]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.316
+anchor_top = 0.38900003
+anchor_right = 0.316
+anchor_bottom = 0.38900003
+offset_left = -173.48001
+offset_top = -119.08002
+offset_right = 326.52
+offset_bottom = 180.91998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("2_dkr68")
+color = Color(0.18039216, 0.12156863, 0.101960786, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/CraftScreen" unique_id=264153201]
+layout_mode = 0
+offset_top = 72.66666
+offset_right = 92.0
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CraftScreen/ScrollContainer" unique_id=1489289650]
+layout_mode = 2
+
+[node name="VEGFButton" type="Button" parent="UI/CraftScreen/ScrollContainer/VBoxContainer" unique_id=1592530003]
+layout_mode = 2
+text = "VEGF"
+
+[node name="GlucagonButton2" type="Button" parent="UI/CraftScreen/ScrollContainer/VBoxContainer" unique_id=250510993]
+layout_mode = 2
+text = "Glucagon"
+
+[node name="InterferonButton3" type="Button" parent="UI/CraftScreen/ScrollContainer/VBoxContainer" unique_id=1877256964]
+layout_mode = 2
+text = "Interferon"
+
+[node name="HistamineButton4" type="Button" parent="UI/CraftScreen/ScrollContainer/VBoxContainer" unique_id=479242048]
+layout_mode = 2
+text = "Histamine"
+
+[node name="TNFAButton5" type="Button" parent="UI/CraftScreen/ScrollContainer/VBoxContainer" unique_id=1187706642]
+layout_mode = 2
+text = "TNF-alpha"
+
+[node name="InsulinButton6" type="Button" parent="UI/CraftScreen/ScrollContainer/VBoxContainer" unique_id=1623933396]
+layout_mode = 2
+text = "Insulin"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="UI/CraftScreen" unique_id=316360147]
+layout_mode = 0
+offset_right = 460.0
+offset_bottom = 72.00001
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CraftScreen/ScrollContainer2" unique_id=1336688966]
+layout_mode = 2
+
+[node name="O" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1279695429]
+layout_mode = 2
+texture = ExtResource("3_6qnyu")
+script = ExtResource("4_l5jkk")
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/O" unique_id=45430041]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="NH" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=435669560]
+layout_mode = 2
+texture = ExtResource("5_w2r4i")
+script = ExtResource("4_l5jkk")
+component = "NH"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/NH" unique_id=85733304]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="CR3" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1128834783]
+layout_mode = 2
+texture = ExtResource("6_5oyw6")
+script = ExtResource("4_l5jkk")
+component = "CR3"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/CR3" unique_id=1215026639]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="N" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1178666473]
+layout_mode = 2
+texture = ExtResource("7_57cgt")
+script = ExtResource("4_l5jkk")
+component = "N"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/N" unique_id=954685609]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="OH" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1460518074]
+layout_mode = 2
+texture = ExtResource("8_vnhp2")
+script = ExtResource("4_l5jkk")
+component = "OH"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/OH" unique_id=1513587920]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="F" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1030156952]
+layout_mode = 2
+texture = ExtResource("9_yse77")
+script = ExtResource("4_l5jkk")
+component = "F"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/F" unique_id=948413115]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="HN" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=455611287]
+layout_mode = 2
+texture = ExtResource("10_4e8w0")
+script = ExtResource("4_l5jkk")
+component = "HN"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/HN" unique_id=1408905769]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="CH3" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1339943521]
+layout_mode = 2
+texture = ExtResource("11_dkr68")
+script = ExtResource("4_l5jkk")
+component = "CH3"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/CH3" unique_id=1381856109]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="S" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1346004333]
+layout_mode = 2
+texture = ExtResource("12_kig42")
+script = ExtResource("4_l5jkk")
+component = "S"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/S" unique_id=1510599181]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="NH2" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=2017816756]
+layout_mode = 2
+texture = ExtResource("13_k71wr")
+script = ExtResource("4_l5jkk")
+component = "NH2"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/NH2" unique_id=1737997589]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="CL" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1492042891]
+layout_mode = 2
+texture = ExtResource("14_237kg")
+script = ExtResource("4_l5jkk")
+component = "CL"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/CL" unique_id=1472201717]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="F3C" type="TextureRect" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer" unique_id=1787022423]
+layout_mode = 2
+texture = ExtResource("15_uexpf")
+script = ExtResource("4_l5jkk")
+component = "F3C"
+
+[node name="Amount" type="Label" parent="UI/CraftScreen/ScrollContainer2/HBoxContainer/F3C" unique_id=394761647]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x1"
+
+[node name="ExitButton" type="Button" parent="UI/CraftScreen" unique_id=1799161974]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "X"
+
+[node name="CraftButton" type="Button" parent="UI/CraftScreen" unique_id=86468047]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Craft"
+
+[node name="InsulinFormula" type="TextureRect" parent="UI/CraftScreen" unique_id=680341713]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58900005
+anchor_right = 0.5
+anchor_bottom = 0.58900005
+offset_left = -128.0
+offset_top = -64.033356
+offset_right = 128.0
+offset_bottom = 63.966644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_gm4r4")
+
+[node name="O_1" type="TextureRect" parent="UI/CraftScreen/InsulinFormula" unique_id=356349102]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 96.0
+offset_right = 112.0
+offset_bottom = 128.0
+script = ExtResource("6_4vyng")
+
+[node name="O_2" type="TextureRect" parent="UI/CraftScreen/InsulinFormula" unique_id=388839455]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 176.0
+offset_bottom = 32.0
+script = ExtResource("6_4vyng")
+
+[node name="OH_1" type="TextureRect" parent="UI/CraftScreen/InsulinFormula" unique_id=1895345605]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 80.0
+script = ExtResource("6_4vyng")
+component = "OH"
+
+[node name="VEGFFormula" type="TextureRect" parent="UI/CraftScreen" unique_id=1490578990]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58900005
+anchor_right = 0.5
+anchor_bottom = 0.58900005
+offset_left = -128.0
+offset_top = -64.033356
+offset_right = 128.0
+offset_bottom = 63.966644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("18_5oyw6")
+
+[node name="O_1" type="TextureRect" parent="UI/CraftScreen/VEGFFormula" unique_id=2110066082]
+layout_mode = 0
+offset_left = 176.66667
+offset_top = 16.0
+offset_right = 208.66667
+offset_bottom = 48.0
+script = ExtResource("6_4vyng")
+
+[node name="N_1" type="TextureRect" parent="UI/CraftScreen/VEGFFormula" unique_id=1266202784]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 112.0
+offset_bottom = 32.0
+script = ExtResource("6_4vyng")
+component = "N"
+
+[node name="CR3_1" type="TextureRect" parent="UI/CraftScreen/VEGFFormula" unique_id=1591414630]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 80.0
+script = ExtResource("6_4vyng")
+component = "CR3"
+
+[node name="HN_1" type="TextureRect" parent="UI/CraftScreen/VEGFFormula" unique_id=544100772]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 80.66667
+offset_right = 176.0
+offset_bottom = 112.66667
+script = ExtResource("6_4vyng")
+component = "HN"
+
+[node name="NH_1" type="TextureRect" parent="UI/CraftScreen/VEGFFormula" unique_id=1766632336]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 64.66667
+offset_right = 80.0
+offset_bottom = 96.66667
+script = ExtResource("6_4vyng")
+component = "NH"
+
+[node name="GlucagonFormula" type="TextureRect" parent="UI/CraftScreen" unique_id=748275847]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58900005
+anchor_right = 0.5
+anchor_bottom = 0.58900005
+offset_left = -128.0
+offset_top = -64.033356
+offset_right = 128.0
+offset_bottom = 63.966644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19_57cgt")
+
+[node name="F_1" type="TextureRect" parent="UI/CraftScreen/GlucagonFormula" unique_id=1483076393]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 40.0
+script = ExtResource("6_4vyng")
+component = "F"
+
+[node name="N_1" type="TextureRect" parent="UI/CraftScreen/GlucagonFormula" unique_id=1094348979]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 104.0
+script = ExtResource("6_4vyng")
+component = "N"
+
+[node name="OH_1" type="TextureRect" parent="UI/CraftScreen/GlucagonFormula" unique_id=387999314]
+layout_mode = 0
+offset_left = 183.33333
+offset_top = 73.333336
+offset_right = 215.33333
+offset_bottom = 105.333336
+script = ExtResource("6_4vyng")
+component = "OH"
+
+[node name="HN_1" type="TextureRect" parent="UI/CraftScreen/GlucagonFormula" unique_id=898051135]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.66667
+offset_right = 56.0
+offset_bottom = 104.66667
+script = ExtResource("6_4vyng")
+component = "HN"
+
+[node name="InterferonFormula" type="TextureRect" parent="UI/CraftScreen" unique_id=54423504]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58900005
+anchor_right = 0.5
+anchor_bottom = 0.58900005
+offset_left = -128.0
+offset_top = -64.033356
+offset_right = 128.0
+offset_bottom = 63.966644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("20_vnhp2")
+
+[node name="S_1" type="TextureRect" parent="UI/CraftScreen/InterferonFormula" unique_id=168039384]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 48.666668
+offset_right = 128.0
+offset_bottom = 80.66667
+script = ExtResource("6_4vyng")
+component = "S"
+
+[node name="CH3_1" type="TextureRect" parent="UI/CraftScreen/InterferonFormula" unique_id=453093674]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 16.666664
+offset_right = 256.0
+offset_bottom = 48.666664
+script = ExtResource("6_4vyng")
+component = "CH3"
+
+[node name="HN_1" type="TextureRect" parent="UI/CraftScreen/InterferonFormula" unique_id=924433408]
+layout_mode = 0
+offset_left = 160.66667
+offset_top = 32.000004
+offset_right = 192.66667
+offset_bottom = 64.0
+script = ExtResource("6_4vyng")
+component = "HN"
+
+[node name="HistamineFormula" type="TextureRect" parent="UI/CraftScreen" unique_id=993857361]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58900005
+anchor_right = 0.5
+anchor_bottom = 0.58900005
+offset_left = -128.0
+offset_top = -64.033356
+offset_right = 128.0
+offset_bottom = 63.966644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("21_yse77")
+
+[node name="N_1" type="TextureRect" parent="UI/CraftScreen/HistamineFormula" unique_id=1628960268]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.666668
+offset_right = 96.0
+offset_bottom = 64.66667
+script = ExtResource("6_4vyng")
+component = "N"
+
+[node name="NH2_1" type="TextureRect" parent="UI/CraftScreen/HistamineFormula" unique_id=2017802586]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 15.333331
+offset_right = 240.0
+offset_bottom = 47.333332
+script = ExtResource("6_4vyng")
+component = "NH2"
+
+[node name="HN_1" type="TextureRect" parent="UI/CraftScreen/HistamineFormula" unique_id=2073406207]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.66667
+offset_right = 48.0
+offset_bottom = 112.66667
+script = ExtResource("6_4vyng")
+component = "HN"
+
+[node name="TNFAFormula" type="TextureRect" parent="UI/CraftScreen" unique_id=1291847536]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58900005
+anchor_right = 0.5
+anchor_bottom = 0.58900005
+offset_left = -128.0
+offset_top = -64.033356
+offset_right = 128.0
+offset_bottom = 63.966644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("22_4e8w0")
+
+[node name="N_1" type="TextureRect" parent="UI/CraftScreen/TNFAFormula" unique_id=1601424740]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 112.0
+script = ExtResource("6_4vyng")
+component = "N"
+
+[node name="N_2" type="TextureRect" parent="UI/CraftScreen/TNFAFormula" unique_id=1083109904]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 15.333328
+offset_right = 240.0
+offset_bottom = 47.33333
+script = ExtResource("6_4vyng")
+component = "N"
+
+[node name="S_1" type="TextureRect" parent="UI/CraftScreen/TNFAFormula" unique_id=1403545032]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 96.0
+offset_right = 240.0
+offset_bottom = 128.0
+script = ExtResource("6_4vyng")
+component = "S"
+
+[node name="F3C_1" type="TextureRect" parent="UI/CraftScreen/TNFAFormula" unique_id=731333170]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 16.666672
+offset_right = 144.0
+offset_bottom = 48.66667
+script = ExtResource("6_4vyng")
+component = "F3C"
+
+[node name="CL_1" type="TextureRect" parent="UI/CraftScreen/TNFAFormula" unique_id=432195823]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.000008
+offset_right = 48.0
+offset_bottom = 64.00001
+script = ExtResource("6_4vyng")
+component = "CL"
+
+[node name="Dither" type="Sprite2D" parent="UI" unique_id=752421579]
+position = Vector2(1006, 360)
+texture = ExtResource("25_k71wr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=655692024]
+libraries/ = SubResource("AnimationLibrary_uexpf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2018659189]
+stream = SubResource("AudioStreamRandomizer_uexpf")
+volume_db = -10.825
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1975355883]
+stream = SubResource("AudioStreamRandomizer_ns75m")
+
+[node name="Tutorial" type="ColorRect" parent="." unique_id=1388701378]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dkr68")
+color = Color(0.13333334, 0.13333334, 0.13333334, 0.52156866)
+
+[node name="Label1" type="Label" parent="Tutorial" unique_id=1969292840]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 144.0
+offset_top = -307.0
+offset_right = 765.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1. Click and Collect Energy!"
+
+[node name="Label2" type="Label" parent="Tutorial" unique_id=1040132335]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = -213.0
+offset_right = 764.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2. More energy per click"
+
+[node name="Label3" type="Label" parent="Tutorial" unique_id=143708159]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 78.0
+offset_right = 764.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3. Automatic energy"
+
+[node name="Label4" type="Label" parent="Tutorial" unique_id=1975092348]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 141.0
+offset_right = 764.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "4. Buy formulas to craft signals"
+
+[node name="Label5" type="Label" parent="Tutorial" unique_id=1293134138]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 319.0
+offset_right = 764.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5. Craft signals"
+
+[node name="Label6" type="Label" parent="Tutorial" unique_id=1060904753]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = 319.0
+offset_right = 458.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Space to continue"
+
+[node name="Label7" type="Label" parent="Tutorial" unique_id=1056466254]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -637.0
+offset_top = -189.0
+offset_right = -61.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "6. Buy components from shop"
+
+[node name="Label8" type="Label" parent="Tutorial" unique_id=933561735]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -127.0
+offset_right = 175.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "7. Craft chemical signals and use them on cells. This will warn them of certain dangers or give them some buffs."
+
+[node name="Label9" type="Label" parent="Tutorial" unique_id=105982709]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -98.0
+offset_right = 593.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "VEGF: Kills cancer cells in the area and protects healthy ones from mutating.
+
+Glucagon: All cells in the affected area generate 5 Energy.
+
+Interferon: Blocks 1 virus infection when an adjacent cell bursts.
+
+Histamine: Prevents viruses and toxins from entering cells near a wound.
+
+TNFA: Auto-destroys toxic cells safely (0% cancer risk).
+
+Insulin: Instantly replaces dead cells with fresh new ones."
+
+[node name="Label10" type="Label" parent="Tutorial" unique_id=1493125300]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = 319.0
+offset_right = 695.0
+offset_bottom = 602.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Presss Space to start"
+
+[connection signal="pressed" from="UI/BG/Sun" to="." method="_on_sun_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/SunbathingLv1" to="." method="_on_sunbathing_lv_1_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/SunbathingLv2" to="." method="_on_sunbathing_lv_2_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/SunbathingLv3" to="." method="_on_sunbathing_lv_3_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/SunbathingLv4" to="." method="_on_sunbathing_lv_4_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/SunbathingLv5" to="." method="_on_sunbathing_lv_5_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/Mitochondria" to="." method="_on_mitochondria_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/VEGFformula" to="." method="_on_veg_fformula_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/GlucagonFormula" to="." method="_on_glucagon_formula_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/InterferonFormula" to="." method="_on_interferon_formula_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/HistamineFormula" to="." method="_on_histamine_formula_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/TNF-alphaFormula" to="." method="_on_tn_falpha_formula_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/InsulinFormula" to="." method="_on_insulin_formula_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/O" to="." method="_on_o_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/NH" to="." method="_on_nh_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/CR3" to="." method="_on_cr_3_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/N" to="." method="_on_n_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/OH" to="." method="_on_oh_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/F" to="." method="_on_f_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/HN" to="." method="_on_hn_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/CH3" to="." method="_on_ch_3_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/S" to="." method="_on_s_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/NH2" to="." method="_on_nh_2_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/CL" to="." method="_on_cl_pressed"]
+[connection signal="pressed" from="UI/BG/ScrollContainer/VBoxContainer/F3C" to="." method="_on_f_3c_pressed"]
+[connection signal="pressed" from="UI/BG/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ScrollContainer/VBoxContainer/VEGFButton" to="." method="_on_vegf_button_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ScrollContainer/VBoxContainer/GlucagonButton2" to="." method="_on_glucagon_button_2_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ScrollContainer/VBoxContainer/InterferonButton3" to="." method="_on_interferon_button_3_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ScrollContainer/VBoxContainer/HistamineButton4" to="." method="_on_histamine_button_4_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ScrollContainer/VBoxContainer/TNFAButton5" to="." method="_on_tnfa_button_5_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ScrollContainer/VBoxContainer/InsulinButton6" to="." method="_on_insulin_button_6_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/CraftScreen/CraftButton" to="." method="_on_craft_button_pressed"]

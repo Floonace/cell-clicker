@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c634holxceelw"]
+
+[ext_resource type="Texture2D" uid="uid://damehsjboyngb" path="res://Temp/thing.png" id="1_4pv08"]
+[ext_resource type="Script" uid="uid://bdandexdbcxiw" path="res://Scripts/Signal/ao_e.gd" id="1_ywx33"]
+[ext_resource type="Texture2D" uid="uid://dp1vc0x2ggar6" path="res://Graphics/Signal/Area.png" id="3_xiq2f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rua1a"]
+radius = 250.0
+
+[node name="AoE" type="StaticBody2D" unique_id=1639327973]
+script = ExtResource("1_ywx33")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1101449543]
+texture = ExtResource("1_4pv08")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=185373119]
+collision_layer = 0
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1651865600]
+shape = SubResource("CircleShape2D_rua1a")
+debug_color = Color(0.54451793, 0.56251645, 0.1849271, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=606439325]
+modulate = Color(1, 1, 1, 0.34901962)
+z_index = 2
+scale = Vector2(7.392, 7.666)
+texture = ExtResource("3_xiq2f")

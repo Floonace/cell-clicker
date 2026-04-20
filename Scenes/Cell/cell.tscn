@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://c5bilm5e85puk"]
+
+[ext_resource type="Script" uid="uid://bp8a6jnbhv5vy" path="res://Scripts/Cell/cell.gd" id="1_i7khc"]
+[ext_resource type="Texture2D" uid="uid://cyjuxyxmpor1v" path="res://Graphics/Real/Cell/cell.png" id="2_gjjoi"]
+[ext_resource type="Texture2D" uid="uid://o6ngmsjo67ff" path="res://Graphics/Real/Cell/virus.png" id="3_gjjoi"]
+[ext_resource type="Texture2D" uid="uid://cprnahpo3ifbt" path="res://Temp/mitochondria.png" id="4_gjjoi"]
+[ext_resource type="AudioStream" uid="uid://ct6g6fm18tjf2" path="res://pop.ogg" id="5_bbr84"]
+[ext_resource type="AudioStream" uid="uid://lye5t374nihe" path="res://die.ogg" id="6_tggdy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i7khc"]
+radius = 29.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8f8h"]
+radius = 29.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjjoi"]
+radius = 29.0
+
+[sub_resource type="Animation" id="Animation_gjjoi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bbr84"]
+resource_name = "born"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.31, 0.39, 0.5),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.3, 1.3), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.30767927, 0.3891837, 0.5053275),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2),
+"update": 0,
+"values": [3.338815, -1.5917403, 3.338815, -1.5917403, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tggdy"]
+resource_name = "death"
+length = 0.6333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.6),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06724116, 0.60313284),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.0, -1.1938052, 3.338815]
+}
+
+[sub_resource type="Animation" id="Animation_cnx8x"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2617994, 0.0, -0.2617994, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 2, 2.4666667),
+"transitions": PackedFloat32Array(2, 2, 2, 2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1.3, 1.3), Vector2(1.3, 1.3), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tggdy"]
+_data = {
+&"RESET": SubResource("Animation_gjjoi"),
+&"born": SubResource("Animation_bbr84"),
+&"death": SubResource("Animation_tggdy"),
+&"idle": SubResource("Animation_cnx8x")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tggdy"]
+random_pitch = 1.2454495
+streams_count = 1
+stream_0/stream = ExtResource("5_bbr84")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cnx8x"]
+random_pitch = 1.2526644
+streams_count = 1
+stream_0/stream = ExtResource("6_tggdy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_024fu"]
+random_pitch = 1.0711546
+streams_count = 1
+
+[node name="Cell" type="CharacterBody2D" unique_id=1921449681 groups=["Cells"]]
+collision_layer = 2057
+collision_mask = 0
+script = ExtResource("1_i7khc")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1082811807]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_gjjoi")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1135582533]
+visible = false
+shape = SubResource("CircleShape2D_i7khc")
+
+[node name="Spawn1" type="Area2D" parent="." unique_id=419568291]
+position = Vector2(-67, -67)
+collision_layer = 0
+
+[node name="Area" type="CollisionShape2D" parent="Spawn1" unique_id=1275112719]
+visible = false
+shape = SubResource("CircleShape2D_i8f8h")
+debug_color = Color(0.22941825, 0.6323829, 0.2545329, 0.41960785)
+
+[node name="Spawn2" type="Area2D" parent="." unique_id=1571682578]
+position = Vector2(67, -67)
+collision_layer = 0
+
+[node name="Area" type="CollisionShape2D" parent="Spawn2" unique_id=583327348]
+visible = false
+shape = SubResource("CircleShape2D_i8f8h")
+debug_color = Color(0.22941825, 0.6323829, 0.2545329, 0.41960785)
+
+[node name="Spawn3" type="Area2D" parent="." unique_id=1306252867]
+position = Vector2(-67, 67)
+collision_layer = 0
+
+[node name="Area" type="CollisionShape2D" parent="Spawn3" unique_id=492488954]
+visible = false
+shape = SubResource("CircleShape2D_i8f8h")
+debug_color = Color(0.22941825, 0.6323829, 0.2545329, 0.41960785)
+
+[node name="Spawn4" type="Area2D" parent="." unique_id=203346813]
+position = Vector2(67, 67)
+collision_layer = 0
+
+[node name="Area" type="CollisionShape2D" parent="Spawn4" unique_id=730485400]
+visible = false
+shape = SubResource("CircleShape2D_i8f8h")
+debug_color = Color(0.22941825, 0.6323829, 0.2545329, 0.41960785)
+
+[node name="Spawn5" type="Area2D" parent="." unique_id=1628969745]
+position = Vector2(134, 0)
+collision_layer = 0
+
+[node name="Area" type="CollisionShape2D" parent="Spawn5" unique_id=1942103856]
+visible = false
+shape = SubResource("CircleShape2D_i8f8h")
+debug_color = Color(0.22941825, 0.6323829, 0.2545329, 0.41960785)
+
+[node name="Spawn6" type="Area2D" parent="." unique_id=210960462]
+position = Vector2(-134, 0)
+collision_layer = 0
+
+[node name="Area" type="CollisionShape2D" parent="Spawn6" unique_id=1158664538]
+visible = false
+shape = SubResource("CircleShape2D_i8f8h")
+debug_color = Color(0.22941825, 0.6323829, 0.2545329, 0.41960785)
+
+[node name="ReproductionTimer" type="Timer" parent="." unique_id=1398448436]
+wait_time = 5.0
+
+[node name="VirusTimer" type="Timer" parent="." unique_id=1125467883]
+wait_time = 5.0
+
+[node name="PoisonTimer" type="Timer" parent="." unique_id=1351200648]
+one_shot = true
+
+[node name="CancerTimer" type="Timer" parent="." unique_id=1475124250]
+wait_time = 2.0
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=162562020]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Virus1" type="Sprite2D" parent="." unique_id=1743727408]
+visible = false
+position = Vector2(-4, -17)
+texture = ExtResource("3_gjjoi")
+
+[node name="Virus2" type="Sprite2D" parent="." unique_id=620136738]
+visible = false
+position = Vector2(-14, 12)
+texture = ExtResource("3_gjjoi")
+
+[node name="Virus3" type="Sprite2D" parent="." unique_id=1712796155]
+visible = false
+position = Vector2(15, 9)
+texture = ExtResource("3_gjjoi")
+
+[node name="Mitochondria" type="Sprite2D" parent="." unique_id=1698787516]
+visible = false
+position = Vector2(0, -1)
+scale = Vector2(0.390625, 0.390625)
+texture = ExtResource("4_gjjoi")
+
+[node name="CutDetector" type="Area2D" parent="." unique_id=1622730809]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CutDetector" unique_id=1073193949]
+visible = false
+shape = SubResource("CircleShape2D_gjjoi")
+disabled = true
+debug_color = Color(0.91200656, 0.19287547, 0.56164616, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1939544637]
+libraries/ = SubResource("AnimationLibrary_tggdy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2021105638]
+stream = SubResource("AudioStreamRandomizer_tggdy")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=361684164]
+stream = SubResource("AudioStreamRandomizer_cnx8x")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1639679700]
+stream = SubResource("AudioStreamRandomizer_024fu")
+volume_db = -8.315
+
+[connection signal="timeout" from="ReproductionTimer" to="." method="_on_reproduction_timer_timeout"]
+[connection signal="timeout" from="VirusTimer" to="." method="_on_virus_timer_timeout"]
+[connection signal="timeout" from="PoisonTimer" to="." method="_on_poison_timer_timeout"]
+[connection signal="timeout" from="CancerTimer" to="." method="_on_cancer_timer_timeout"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
